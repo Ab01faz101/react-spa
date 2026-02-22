@@ -7,17 +7,19 @@ function App() {
 
   return (
     <>
-      <div className="bg-gray-900 min-h-screen">
+      <div className="bg-gray-900 min-h-screen flex flex-col items-center">
 
 
         <BrowserRouter>
 
           <Header />
 
+          <section className='mt-30 max-w-7xl w-full '>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/users/*" element={<UserRoute/>} />
           </Routes>
+          </section>
         </BrowserRouter>
       </div>
 
