@@ -11,8 +11,9 @@ function UserRoute() {
             <Routes>
                 <Route path="/" element={<All />} />
                 <Route path="/create" element={<Create />} />
-                <Route path="/edit" element={<Edit />} />
-                <Route path="/:slug" element={<Show />} />
+                <Route path="/edit/:id" element={<Edit />} />
+
+                <Route path="/:id" element={<Show />} />
             </Routes>
         </>
     )
