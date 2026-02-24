@@ -1,22 +1,15 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router"
+import { useEffect } from "react";
+import { Link } from "react-router";
+
+
 function All() {
-    const [posts, setPosts] = useState(null);
+    const {data : posts} = useGet("https://jsonplaceholder.typicode.com/posts")
 
 
     useEffect(() => {
-        const getPosts = async () => {
-            const fetchPosts = await fetch("https://jsonplaceholder.typicode.com/posts").then((res) => {
-                if (!res.ok) throw new Error("canet read posts");
-                return res.json();
-            }).then((data) => {
-                setPosts(data);
-                console.log(data);
-            })
-        }
-
-        getPosts();
-    }, [])
+        console.log(posts)
+    } , []);
+    
 
 
 
@@ -69,6 +62,7 @@ function All() {
         </>
     )
 }
+import useGet from "../../hooks/useGet";
 
 
 export default All;
