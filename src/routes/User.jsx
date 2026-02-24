@@ -12,7 +12,7 @@ function UserRoute() {
                 <Route path="/" element={<All />} />
                 <Route path="/create" element={<Create />} />
                 <Route path="/edit" element={<Edit />} />
-                <Route path="/:slug" element={<Show />} />
+                <Route path="/:id" element={<Show />} />
             </Routes>
         </>
     )
